@@ -1,0 +1,12 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "hopvium-discovery",
+  "main": "index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": { "enabled": false },
+  "vars": { "ALLOWED_ORIGINS": "https://micknorj.github.io" },
+  "durable_objects": { "bindings": [{ "name": "ROOMS", "class_name": "DiscoveryRoom" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["DiscoveryRoom"] }]
+}

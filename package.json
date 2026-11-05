@@ -1,0 +1,25 @@
+{
+  "name": "hopvium",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.20"
+  },
+  "packageManager": "npm@12.2.1",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/dev.mjs",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node scripts/browser-tests.mjs",
+    "browsers:install": "node scripts/browser-tests.mjs --install",
+    "test:integration": "node tests/integration/discovery.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "wrangler": "4.156.2",
+    "ws": "8.22.1"
+  }
+}

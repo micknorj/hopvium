@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' __SIGNAL_ORIGIN__; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Hopvium · Mick's Tools</title>
+  <meta name="description" content="Send original files directly between browsers, with approval before every transfer.">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#devices" tabindex="0">Skip to nearby devices</a>
+  <div class="page">
+    <main class="app">
+      <header class="header"><h1>Hopvium</h1></header>
+      <section id="devices" class="shell" aria-labelledby="panel-title" tabindex="-1" data-view="discovery">
+        <div class="toolbar">
+          <p class="identity">Discovered as <strong id="self-name">—</strong></p>
+          <h2 id="panel-title" aria-live="polite">0 Nearby devices</h2>
+        </div>
+        <div class="workspace">
+          <p id="transfer-status" class="message" role="status" aria-live="polite" hidden></p>
+          <div id="discovery-view" class="view">
+            <div id="peers" class="peer-list" role="group" aria-label="Nearby devices"></div>
+            <p id="empty" class="empty">Open Hopvium on other devices to send files</p>
+          </div>
+          <section id="incoming" class="view" aria-labelledby="incoming-description" hidden>
+            <p id="incoming-description" class="share-description"></p>
+            <ul id="incoming-files" class="file-list" tabindex="0" aria-label="Requested files"></ul>
+          </section>
+          <section id="activity" class="view" aria-labelledby="activity-peer" hidden>
+            <p id="activity-peer" class="share-description"></p>
+            <ul id="transfer-files" class="file-list" tabindex="0" aria-label="Transfer files"></ul>
+          </section>
+          <section id="downloads" class="downloads" aria-label="Received files" hidden>
+            <ul id="download-list" class="file-list"></ul>
+          </section>
+        </div>
+        <div class="actions">
+          <span id="verification" class="security" title="Available after connecting. Compare this code with the other person through a trusted channel; cancel if it differs. This code does not prove identity.">Security code: <code id="security-code" aria-label="Available after connecting">--- ---</code></span>
+          <div id="request-actions" class="action-group" hidden><button id="decline" class="subtle">Decline</button><button id="accept" class="primary">Accept</button></div>
+          <div id="transfer-actions" class="action-group" hidden><button id="cancel" class="subtle">Cancel</button></div>
+          <button id="done" class="subtle" hidden>Done</button>
+          <input id="files" type="file" multiple hidden aria-label="Files to send">
+        </div>
+      </section>
+      <p class="disclaimer">Files transfer unchanged between browsers after approval. GitHub Pages hosts Hopvium; Cloudflare groups devices by public IPv4 address or IPv6 /64 prefix. Discovery does not guarantee devices share a local network.</p>
+    </main>
+  </div>
+  <footer class="site-credit">© 2026 micknorj · Mick's Tools · <a href="https://github.com/micknorj" target="_blank" rel="noopener noreferrer">GitHub</a></footer>
+</body>
+</html>
